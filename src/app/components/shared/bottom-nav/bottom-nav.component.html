@@ -1,0 +1,14 @@
+<div class="nav-area">
+    <ul class="nav-item-wrapper">
+        <ng-container *ngFor="let navItem of navItems">
+            <li class="nav-item" 
+                [routerLink]="navItem.url"
+                [routerLinkActiveOptions]="{exact:true}"
+                routerLinkActive="active-route"
+            >
+                <mat-icon>{{navItem.icon}}</mat-icon>
+            </li>
+        </ng-container>
+    </ul>
+</div>
+
