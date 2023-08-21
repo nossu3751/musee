@@ -19,7 +19,7 @@
     width: 100%;
     border-top: 1px solid #eee;
     height: calc(var(--nav-height));
-    z-index: 10000;
+    z-index: 1000;
     position:fixed;
     padding-bottom:env(safe-area-inset-bottom);
     background-color: white;
