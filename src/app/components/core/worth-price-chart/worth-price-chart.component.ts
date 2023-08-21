@@ -1,6 +1,7 @@
 import { Component, OnInit, ElementRef, ViewChild} from '@angular/core';
 import { VerifVoteService } from 'src/app/services/data/verif-vote.service';
 import Chart from 'chart.js/auto';
+import { ascending, filter } from 'd3';
 
 @Component({
   selector: 'app-worth-price-chart',
@@ -24,6 +25,7 @@ export class WorthPriceChartComponent implements OnInit{
     this.verifVoteService.getVerifWorthPrices(this.awid).subscribe({
       "next": (data: any) => {
         this.createChart(data)
+        // console.log(data)
       },
       "error": (error: any) => {
         console.log(error)
@@ -35,14 +37,47 @@ export class WorthPriceChartComponent implements OnInit{
 
 
   createChart(data: any): void {
+    const xmax = Math.max.apply(Math,data)
+    // console.log(xmax, typeof(xmax))
+    const bin_counts = 15
+    const xlabels: number[] = []
+    const count_data: number[] = []
+    let counter: number = 0;
+    const bin_size = Math.ceil(xmax / bin_counts)
+    for (let i = 0; i < bin_counts; i++){
+      // xlabels.push(`${i * bin_size}`)
+      xlabels.push(i*bin_size)
+    }
+
+    // console.log(bin_size)
+    let last_bin_num = 0
+    for (let i = 1; i < xlabels.length; i++){
+      // let tmp_data = filter(data, (d:number) => {
+      //   return last_bin_num <= d &&  d < xlabels[i]
+      // })
+
+      for (let j = 0; j < data.length; j++){
+        if (last_bin_num <= data[j] && data[j] < xlabels[i]) {
+          counter++;
+        }
+
+      }
+      count_data.push(counter)
+      counter = 0
+      last_bin_num = xlabels[i]
+    }
+
+    console.log(count_data)
+
+
     const ctx = this.histogramCanvas.nativeElement.getContext('2d');
     const chart = new Chart(ctx, {
       type: 'bar',
       data: {
-        labels: [0, 100,200,300,400,500,600,700,800,900],
+        labels:xlabels,
         datasets: [{
-          label: 'Number of Arrivals',
-          data: data,
+          label: 'prices',
+          data: count_data,
           backgroundColor: 'green',
         }]
       },
