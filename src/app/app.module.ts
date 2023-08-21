@@ -12,6 +12,8 @@ import { MatIconModule} from '@angular/material/icon';
 import { RoutePlaceholderComponent } from './components/shared/route-placeholder/route-placeholder.component';
 import { RateArtComponent } from './components/core/rate-art/rate-art.component';
 import { HammerModule } from '@angular/platform-browser';
+import { WorthPriceChartComponent } from './components/core/worth-price-chart/worth-price-chart.component';
+import { HttpClientModule } from '@angular/common/http';
 import { LoadingScreenComponent } from './components/shared/loading-screen/loading-screen.component';
 
 @NgModule({
@@ -22,6 +24,7 @@ import { LoadingScreenComponent } from './components/shared/loading-screen/loadi
     BottomNavComponent,
     RoutePlaceholderComponent,
     RateArtComponent,
+    WorthPriceChartComponent,
     LoadingScreenComponent
   ],
   imports: [
@@ -35,7 +38,8 @@ import { LoadingScreenComponent } from './components/shared/loading-screen/loadi
       registrationStrategy: 'registerWhenStable:30000'
     }),
     MatIconModule,
-    HammerModule
+    HammerModule,
+    HttpClientModule
   ],
   providers: [
     {
