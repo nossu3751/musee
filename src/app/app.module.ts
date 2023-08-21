@@ -15,6 +15,7 @@ import { HammerModule } from '@angular/platform-browser';
 import { WorthPriceChartComponent } from './components/core/worth-price-chart/worth-price-chart.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LoadingScreenComponent } from './components/shared/loading-screen/loading-screen.component';
+import { DiscoveryComponent } from './components/core/discovery/discovery.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { LoadingScreenComponent } from './components/shared/loading-screen/loadi
     RoutePlaceholderComponent,
     RateArtComponent,
     WorthPriceChartComponent,
-    LoadingScreenComponent
+    LoadingScreenComponent,
+    DiscoveryComponent
   ],
   imports: [
     BrowserModule,

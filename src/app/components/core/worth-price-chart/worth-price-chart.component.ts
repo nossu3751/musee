@@ -1,7 +1,6 @@
 import { Component, OnInit, ElementRef, ViewChild} from '@angular/core';
 import { VerifVoteService } from 'src/app/services/data/verif-vote.service';
 import Chart from 'chart.js/auto';
-import { ascending, filter } from 'd3';
 
 @Component({
   selector: 'app-worth-price-chart',
