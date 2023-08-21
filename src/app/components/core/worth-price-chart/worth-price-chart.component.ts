@@ -81,6 +81,31 @@ export class WorthPriceChartComponent implements OnInit{
           backgroundColor: 'green',
         }]
       },
+      options: {
+        responsive: true,
+        scales: {
+          x: {
+            border: {
+              display: false
+            },
+            grid: {
+              display: false,
+            }
+          },
+          y: {
+            ticks: {
+              stepSize:1
+            },
+            border: {
+              display: false
+            },
+            grid: {
+              display: false,
+            }
+          }
+
+        }
+      }
       // options: {
       //   scales: {
       //     xAxes: [{
