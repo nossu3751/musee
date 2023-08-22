@@ -16,4 +16,8 @@ export class ArtworkService {
   getRandomArtworks(uid:number, count:number = 5): Observable<any>{
     return this.http.get(`http://localhost:5000/api/demo/random_artworks/?count=${count}&uid=${uid}`)
   }
+
+  getUserArtworks(uid:number):Observable<any> {
+    return this.http.get(`http://localhost:5000/api/demo/artworks/?uid=${uid}`)
+  }
 }

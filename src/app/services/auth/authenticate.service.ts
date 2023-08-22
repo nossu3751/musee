@@ -1,14 +1,22 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { CanActivateFn, Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthenticateService {
-  loggedinUser: string | null = null;
-  
-  constructor() { }
+  // loggedinUser: number | null = null;
+  loggedinUser: number | null = null;
+  constructor(
+   
+  ) { }
 
-  login(user: string) {
+  authenticate():boolean {
+    return this.loggedinUser !== null;
+  }
+
+  login(user: any) {
     this.loggedinUser = user;
     
   }
@@ -16,4 +24,23 @@ export class AuthenticateService {
     this.loggedinUser = null;
   }
 
+
+
+}
+
+export const canActivateProtectedRoutes: CanActivateFn = (route, state) => {
+  const authService = inject(AuthenticateService);
+  const router = inject(Router)
+  const snackBar = inject(MatSnackBar)
+  if (authService.authenticate()) {
+    return true;
+  } else {
+    router.navigateByUrl("/login");
+    snackBar.open("Please Log In First", "Close", {
+      duration: 3000,
+      panelClass: ['custom-snackbar'],
+      verticalPosition: 'bottom'
+    })
+    return false;
+  }
 }

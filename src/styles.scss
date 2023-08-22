@@ -44,6 +44,12 @@ $musee-theme: mat.define-light-theme((
 
 * {
   -webkit-tap-highlight-color: transparent;
+  overflow-x: hidden;
+  
+}
+
+*::-webkit-scrollbar {
+  display:none;
 }
 
 :root {
@@ -64,4 +70,21 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .no-pointer-events {
   pointer-events: none;
+}
+
+.cdk-overlay-container {
+  z-index: 1000000!important;
+}
+
+::ng-deep .custom-snackbar {
+  height: 150px;
+}
+
+.mat-mdc-snack-bar-container {
+  &.custom-snackbar {
+    --mdc-snackbar-supporting-text-color: var(--primary-color);
+    --mat-mdc-snack-bar-button-color: var(--primary-color);
+    --mat-mdc-button-persistent-ripple-color: white;
+
+  }
 }

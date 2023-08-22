@@ -1,1 +1,25 @@
-<p>login works!</p>
+<div class="login-container">
+    <div class="wrapper">
+        <div class="logo-area">
+            <img class="logo" src="assets/musee.gif">
+        </div>
+        <div class="input-area" >
+            <input [(ngModel)]="id" 
+                    placeholder="id" 
+                    [ngStyle]="{
+                        border: id !== '' ? '1.5px solid #555': '1.5px solid #ccc'
+                    }">
+        </div>
+        <div class="input-area" >
+            <input [(ngModel)]="password" 
+                    type="password" 
+                    placeholder="password" 
+                    [ngStyle]="{
+                        border: password !== '' ? '1.5px solid #555': '1.5px solid #ccc'
+                    }">
+        </div>
+        <div class="input-area">
+            <button class="submit" (click)="login()">Log In</button>
+        </div>
+    </div>
+</div>

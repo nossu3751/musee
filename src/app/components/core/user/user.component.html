@@ -1,0 +1,17 @@
+<div class="user-container">
+    <div *ngIf="myInfo">
+        {{myInfo.first_name}} {{myInfo.last_name}}
+    </div>
+    <div *ngIf="myArtworks && (loadedImagesCount | async) === myArtworks.length" class="img-box-container">
+        <ng-container *ngFor="let aw of myArtworks; let i = index">
+            <div class="img-box">
+                <img [src]="aw.img_link" [ngStyle]="{
+                    opacity: aw.verified ? '1':'0.2'
+                }" class="img">
+                <div class="message" *ngIf="!aw.verified">
+                    pending
+                </div>
+            </div>
+        </ng-container>
+    </div>
+</div>

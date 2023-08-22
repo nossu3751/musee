@@ -17,6 +17,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { LoadingScreenComponent } from './components/shared/loading-screen/loading-screen.component';
 import { DiscoveryComponent } from './components/core/discovery/discovery.component';
 import { LoginComponent } from './components/core/login/login.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { FormsModule } from '@angular/forms';
+import { UserComponent } from './components/core/user/user.component';
+
 
 @NgModule({
   declarations: [
@@ -29,7 +33,8 @@ import { LoginComponent } from './components/core/login/login.component';
     WorthPriceChartComponent,
     LoadingScreenComponent,
     DiscoveryComponent,
-    LoginComponent
+    LoginComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +48,9 @@ import { LoginComponent } from './components/core/login/login.component';
     }),
     MatIconModule,
     HammerModule,
-    HttpClientModule
+    HttpClientModule,
+    MatSnackBarModule,
+    FormsModule
   ],
   providers: [
     {
