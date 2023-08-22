@@ -2,10 +2,10 @@
     [@swipeAnimation]="animationState"
     (swipeleft)="decline()"
     (swiperight)="accept()"
-    *ngIf="currentItem && isVisible"
+    *ngIf="currentItem && isVisible && currentImageLoaded"
     (@swipeAnimation.done)="onAnimationDone($event)"
 >
     <!-- {{currentItem.name}} -->
-    <img [src]="currentItem.img_link" class="aw-img no-pointer-events">
+    <img [src]="currentItem.img_link" class="aw-img no-pointer-events" (load)="onImageLoaded()">
 </div>
 

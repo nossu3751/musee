@@ -23,6 +23,7 @@ import { ArtworkService } from 'src/app/services/data/artwork.service';
 export class RateArtComponent implements OnInit{
   items:any = null
   currentItem:any = null;
+  currentImageLoaded:boolean = false;
   animationState = 'initial';
   isVisible = false;
 
@@ -32,10 +33,24 @@ export class RateArtComponent implements OnInit{
       "next":(data)=>{
         this.items = data;
         this.currentItem = this.items.shift();
+        this.loadImage(this.currentItem.img_link);
         this.isVisible = true;
       }
     })
   }
+
+  loadImage(imgLink:string) {
+    let img = new Image();
+    img.src = imgLink;
+    img.onload = () => {
+      this.currentImageLoaded = true;
+    }
+  }
+
+  onImageLoaded() {
+    this.currentImageLoaded = true;
+  }
+
   accept() {
     console.log('Accepted', this.currentItem);
     this.animationState = 'right';
@@ -55,6 +70,7 @@ export class RateArtComponent implements OnInit{
       this.animationState = 'initial'
       // wait for 
       setTimeout(() => {
+        this.currentImageLoaded = false;
         this.loadNextItem();
         this.isVisible = true;
       }, 50);
@@ -63,5 +79,6 @@ export class RateArtComponent implements OnInit{
 
   private loadNextItem(){
     this.currentItem = this.items.shift();
+    this.loadImage(this.currentItem.img_link);
   }
 }
