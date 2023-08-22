@@ -1,5 +1,6 @@
-import { Component , ChangeDetectorRef, Renderer2, ElementRef, HostListener} from '@angular/core';
+import { Component , OnInit, ChangeDetectorRef, Renderer2, ElementRef, HostListener} from '@angular/core';
 import { trigger, state, style, animate, transition} from '@angular/animations';
+import { ArtworkService } from 'src/app/services/data/artwork.service';
 
 @Component({
   selector: 'app-rate-art',
@@ -19,12 +20,22 @@ import { trigger, state, style, animate, transition} from '@angular/animations';
     ]),
   ],
 })
-export class RateArtComponent {
-  items = ['item1', 'item2', 'item3', 'item4']
-  currentItem = this.items.shift();
+export class RateArtComponent implements OnInit{
+  items:any = null
+  currentItem:any = null;
   animationState = 'initial';
-  isVisible = true;
+  isVisible = false;
 
+  constructor(private artworkService:ArtworkService){}
+  ngOnInit(): void {
+    this.artworkService.getRandomArtworks(1,5).subscribe({
+      "next":(data)=>{
+        this.items = data;
+        this.currentItem = this.items.shift();
+        this.isVisible = true;
+      }
+    })
+  }
   accept() {
     console.log('Accepted', this.currentItem);
     this.animationState = 'right';
@@ -49,9 +60,6 @@ export class RateArtComponent {
       }, 50);
     }
   }
-
-
-
 
   private loadNextItem(){
     this.currentItem = this.items.shift();

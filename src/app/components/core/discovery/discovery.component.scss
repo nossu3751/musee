@@ -1,0 +1,49 @@
+.discovery-container {
+    max-width: 600px;
+    width: 100%;
+    padding: var(--nav-height) 0 var(--nav-height) 0;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto 0 auto;
+}
+
+.aw-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 3em;
+    position: relative;
+}
+
+.aw-author-area {
+    display: flex;
+    padding: 0.5em 0.5em 0.5em 0.5em;
+    
+}
+
+
+
+
+
+
+.aw-img-area {
+    width: 100%;
+    .aw-img {
+        width: 100%;
+        height: auto;
+        display: block;
+        // border-radius: 0.5em;
+    }
+}
+
+
+.aw-info-area {
+    width: 100%;
+    display: flex;
+    padding: 0 0.5em 00.5em;
+    .aw-title {
+        font-family: 'Vogue';
+        font-size: 1.2em;
+        margin: 0.5em 0 0.5em 0;
+    }
+}

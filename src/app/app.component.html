@@ -1,5 +1,5 @@
-<!-- <app-loading-screen></app-loading-screen> -->
-<router-outlet>
 
+<router-outlet>
+  <app-loading-screen *ngIf="loadingService.loading | async"></app-loading-screen>
 </router-outlet>
 <app-bottom-nav></app-bottom-nav>

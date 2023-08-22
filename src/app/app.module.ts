@@ -16,6 +16,7 @@ import { WorthPriceChartComponent } from './components/core/worth-price-chart/wo
 import { HttpClientModule } from '@angular/common/http';
 import { LoadingScreenComponent } from './components/shared/loading-screen/loading-screen.component';
 import { DiscoveryComponent } from './components/core/discovery/discovery.component';
+import { LoginComponent } from './components/core/login/login.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { DiscoveryComponent } from './components/core/discovery/discovery.compon
     RateArtComponent,
     WorthPriceChartComponent,
     LoadingScreenComponent,
-    DiscoveryComponent
+    DiscoveryComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

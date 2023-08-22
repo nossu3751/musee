@@ -1,6 +1,6 @@
 .item {
     width: calc(var(--html-width) - 2em);
-    height: 200px;
+    height: calc(var(--html-width) - 2em);
     border: 1px solid #eee;
     margin: 20px auto;
     text-align: center;
@@ -10,4 +10,17 @@
     touch-action: pan-y; /* This ensures vertical scrolling is not affected */
     border-radius: 0.5em;
     box-shadow: 1px 1px 10px rgba(0,0,0,0.1);
+    object-fit: contain;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.aw-img {
+    max-width: 100%;
+    display: flex;
+    // border-radius: 0.5em;
+    max-height: 100%;
+    margin: auto;
+
 }

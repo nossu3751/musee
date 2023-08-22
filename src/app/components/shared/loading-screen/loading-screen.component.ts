@@ -5,6 +5,6 @@ import { Component } from '@angular/core';
   templateUrl: './loading-screen.component.html',
   styleUrls: ['./loading-screen.component.scss']
 })
-export class LoadingScreenComponent {
+export class LoadingScreenComponent{
   spinner = "assets/musee.gif"
 }

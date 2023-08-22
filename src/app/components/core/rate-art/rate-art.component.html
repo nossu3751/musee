@@ -5,6 +5,7 @@
     *ngIf="currentItem && isVisible"
     (@swipeAnimation.done)="onAnimationDone($event)"
 >
-    {{currentItem}}
+    <!-- {{currentItem.name}} -->
+    <img [src]="currentItem.img_link" class="aw-img no-pointer-events">
 </div>
 
