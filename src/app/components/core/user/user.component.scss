@@ -31,4 +31,22 @@
     }
 }
 
+.logout {
+    margin-top: 0.5em;
+    width: 50%;
+    height: 40px;
+    outline: none;
+    -webkit-appearance: none;
+    font-size: 14px;
+    padding: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    background-color: var(--primary-color);
+    // border: 1.5px solid var(--primary-color);
+    color: white;
+    border: none;
+}
+
 

@@ -18,7 +18,7 @@ export class UserComponent implements OnInit{
   constructor(
     private userService:UserService,
     private awService:ArtworkService,
-    private authService:AuthenticateService,
+    public authService:AuthenticateService,
     private router:Router
   ) {}
 
@@ -35,7 +35,7 @@ export class UserComponent implements OnInit{
   }
 
   ngOnInit(): void {
-    const user = this.authService.loggedinUser
+    const user = this.authService.loggedInUser
     if (!user) {
       this.router.navigateByUrl('/login')
     }else{

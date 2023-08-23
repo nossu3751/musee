@@ -1,6 +1,8 @@
 import { Component , OnInit, ChangeDetectorRef, Renderer2, ElementRef, HostListener} from '@angular/core';
 import { trigger, state, style, animate, transition} from '@angular/animations';
 import { ArtworkService } from 'src/app/services/data/artwork.service';
+import { VerifVoteService } from 'src/app/services/data/verif-vote.service';
+import { AuthenticateService } from 'src/app/services/auth/authenticate.service';
 
 @Component({
   selector: 'app-rate-art',
@@ -27,7 +29,11 @@ export class RateArtComponent implements OnInit{
   animationState = 'initial';
   isVisible = false;
 
-  constructor(private artworkService:ArtworkService){}
+  constructor(
+    private artworkService:ArtworkService,
+    private voteService:VerifVoteService,
+    private authService:AuthenticateService
+  ){}
   ngOnInit(): void {
     this.artworkService.getRandomArtworks(1,5).subscribe({
       "next":(data)=>{
@@ -52,11 +58,38 @@ export class RateArtComponent implements OnInit{
   }
 
   accept() {
+    const uid = this.authService.loggedInUser
+    this.voteService.vote({
+      uid: uid,
+      awid: this.currentItem.id,
+      worth: true
+    }).subscribe({
+      "next": (data)=>{
+        console.log(data)
+      },
+      "error": (error)=>{
+        console.log(error)
+      }
+    })
     console.log('Accepted', this.currentItem);
     this.animationState = 'right';
+
   }
 
   decline() {
+    const uid = this.authService.loggedInUser
+    this.voteService.vote({
+      uid: uid,
+      awid: this.currentItem.id,
+      worth: false
+    }).subscribe({
+      "next": (data)=>{
+        console.log(data)
+      },
+      "error": (error)=>{
+        console.log(error)
+      }
+    })
     console.log('Declined', this.currentItem);
     this.animationState = 'left';
   }

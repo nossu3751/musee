@@ -15,4 +15,8 @@ export class VerifVoteService {
   getVerifWorthPrices(awid: number):Observable<any> {
     return this.http.get(`http://localhost:5000/api/demo/artworks/${awid}/get_worth_prices/`)
   }
+
+  vote(voteData:any){
+    return this.http.put(`http://localhost:5000/api/demo/artworks/vote`, voteData)
+  }
 }

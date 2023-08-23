@@ -1,27 +1,39 @@
 import { Injectable, inject } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { CanActivateFn, Router } from '@angular/router';
+import { LoadingService } from '../ui/loading.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthenticateService {
   // loggedinUser: number | null = null;
-  loggedinUser: number | null = null;
   constructor(
-   
-  ) { }
+    private router:Router,
+    private loadingService:LoadingService
+  ){
 
+  }
+  loggedInUser:number|null = null
   authenticate():boolean {
-    return this.loggedinUser !== null;
+    const loggedInUser = localStorage.getItem("loggedInUser")
+    if(this.loggedInUser == null) {
+      this.loggedInUser = Number(loggedInUser)
+    }
+    console.log("LoggedIn!",this.loggedInUser)
+    return loggedInUser !== null;
   }
 
   login(user: any) {
-    this.loggedinUser = user;
-    
+    localStorage.setItem("loggedInUser", user)
+    this.loggedInUser = Number(user);
   }
+
   logout() {
-    this.loggedinUser = null;
+    this.loadingService.showLoading()
+    this.loggedInUser = null;
+    localStorage.removeItem("loggedInUser")
+    this.router.navigateByUrl("/")
   }
 
 
