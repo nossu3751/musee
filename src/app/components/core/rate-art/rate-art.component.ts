@@ -3,6 +3,7 @@ import { trigger, state, style, animate, transition} from '@angular/animations';
 import { ArtworkService } from 'src/app/services/data/artwork.service';
 import { VerifVoteService } from 'src/app/services/data/verif-vote.service';
 import { AuthenticateService } from 'src/app/services/auth/authenticate.service';
+import { ModalService } from 'src/app/services/ui/modal.service';
 
 @Component({
   selector: 'app-rate-art',
@@ -32,7 +33,9 @@ export class RateArtComponent implements OnInit{
   constructor(
     private artworkService:ArtworkService,
     private voteService:VerifVoteService,
-    private authService:AuthenticateService
+    private authService:AuthenticateService,
+    private modalService:ModalService
+
   ){}
   ngOnInit(): void {
     this.artworkService.getRandomArtworks(1,5).subscribe({
@@ -112,6 +115,10 @@ export class RateArtComponent implements OnInit{
 
   private loadNextItem(){
     this.currentItem = this.items.shift();
-    this.loadImage(this.currentItem.img_link);
+    if(this.currentItem){
+      this.loadImage(this.currentItem.img_link);
+    }else{
+      this.modalService.closeModal()
+    }
   }
 }

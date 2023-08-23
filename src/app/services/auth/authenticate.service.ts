@@ -30,10 +30,12 @@ export class AuthenticateService {
   }
 
   logout() {
-    this.loadingService.showLoading()
-    this.loggedInUser = null;
-    localStorage.removeItem("loggedInUser")
-    this.router.navigateByUrl("/")
+    this.loadingService.showLoading("page")
+    setTimeout(()=>{
+      this.loggedInUser = null;
+      localStorage.removeItem("loggedInUser")
+      this.router.navigateByUrl("/")
+    },1990)
   }
 
 

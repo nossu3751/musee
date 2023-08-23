@@ -1,0 +1,28 @@
+.modal-overlay {
+    display: flex;
+    width: var(--html-width);
+    height: 100%;
+    position: fixed;
+    background-color: rgba(0,0,0,0.2);
+    backdrop-filter: blur(3px);
+    z-index: 10000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-container {
+    display: flex;
+    max-width: 800px;
+    width: calc(100% - 2em);
+    height: calc(var(--html-height) - 6em);
+    background-color: white;
+    border-radius: 8px;
+    flex-direction: column;
+    margin: 0 auto 0 auto;
+    .top-area {
+        width: 100%;
+        .title {
+            text-align: center;
+        }
+    }
+}

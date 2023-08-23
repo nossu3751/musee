@@ -20,6 +20,7 @@ import { LoginComponent } from './components/core/login/login.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { FormsModule } from '@angular/forms';
 import { UserComponent } from './components/core/user/user.component';
+import { ModalComponent } from './components/shared/modal/modal.component';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { UserComponent } from './components/core/user/user.component';
     LoadingScreenComponent,
     DiscoveryComponent,
     LoginComponent,
-    UserComponent
+    UserComponent,
+    ModalComponent
   ],
   imports: [
     BrowserModule,

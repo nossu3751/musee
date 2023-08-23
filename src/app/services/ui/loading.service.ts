@@ -5,16 +5,23 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class LoadingService {
-
-  loading:BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+  dataLoading: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+  pageLoading: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
   constructor(
     
   ) { }
 
-  showLoading(mode="container"):void {
-    this.loading.next(true);
-    setTimeout(()=>{
-      this.loading.next(false);
-    }, 2000)
+  showLoading(mode="data"):void {
+    if(mode == "data"){
+      this.dataLoading.next(true);
+      setTimeout(()=>{
+        this.dataLoading.next(false);
+      }, 2000)
+    }else if(mode == "page"){
+      this.pageLoading.next(true);
+      setTimeout(()=>{
+        this.pageLoading.next(false);
+      }, 2000)
+    }
   }
 }
