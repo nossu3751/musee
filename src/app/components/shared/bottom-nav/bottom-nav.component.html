@@ -6,7 +6,9 @@
                 [routerLinkActiveOptions]="{exact:true}"
                 routerLinkActive="active-route"
             >
-                <mat-icon>{{navItem.icon}}</mat-icon>
+                <!-- <mat-icon>{{navItem.icon}}</mat-icon> -->
+                <mat-icon routerLinkActive="active-route" [svgIcon]="navItem.icon">{{navItem.icon}}</mat-icon>
+                <div class="indicator" routerLinkActive="active-route"></div>
             </li>
         </ng-container>
     </ul>

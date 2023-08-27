@@ -1,0 +1,7 @@
+.container {
+    height: var(--html-height);
+    width: var(--html-width);
+    overflow-x: hidden;
+    overflow-y: scroll;
+    padding: var(--nav-height) 1em var(--nav-height) 1em;
+}

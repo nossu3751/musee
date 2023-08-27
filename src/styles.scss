@@ -54,7 +54,11 @@ $musee-theme: mat.define-light-theme((
 
 :root {
   // --primary-color: #9482af;
-  --primary-color: rgb(239, 155, 0);
+  --primary-color: #FF4726;
+  --primary-dark-color: #FF4726;
+  --primary-color-2: #FF6448;
+  --primary-color-3: #FF907C;
+  --primary-color-4: #FFC9BF;
   // --secondary-color: #d4bfe0;
   // --secondary-color: #b4a0c7;
   --secondary-color: #735f90;
@@ -62,7 +66,7 @@ $musee-theme: mat.define-light-theme((
   --other-color: #fff;
   --nav-item-color: #aaa;
   --nav-logo-ratio: 0.7;
-  --nav-height: 56px;
+  --nav-height: 53px;
 }
 
 html, body { height: 100%; }

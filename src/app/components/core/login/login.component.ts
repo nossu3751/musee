@@ -31,7 +31,7 @@ export class LoginComponent {
       return
     }
     const idNum = Number(idStr)
-    if(idNum <= 0 || 100 < idNum){
+    if(idNum <= 0 || 500 < idNum){
       this.snackBar.open("User doesn't exist", "Close", {
         duration: 3000,
         panelClass: ['custom-snackbar'],

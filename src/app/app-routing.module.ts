@@ -9,6 +9,7 @@ import { WorthPriceChartComponent } from './components/core/worth-price-chart/wo
 import { LoginComponent } from './components/core/login/login.component';
 import { UserComponent } from './components/core/user/user.component';
 import { canActivateProtectedRoutes } from './services/auth/authenticate.service';
+import { ArtworkComponent } from './components/core/artwork/artwork.component';
 
 const routes: Routes = [
   {path:"", redirectTo: 'discovery', pathMatch: 'full' },
@@ -17,6 +18,7 @@ const routes: Routes = [
   // {path:"ar", component:ArViewComponent},
 
   {path:"discovery", component:DiscoveryComponent, canActivate:[canActivateProtectedRoutes]},
+  {path:"discovery/:id", component:ArtworkComponent, canActivate:[canActivateProtectedRoutes]},
   {path:"user", component:UserComponent, canActivate:[canActivateProtectedRoutes]},
   {path:"competition", component:RoutePlaceholderComponent, canActivate:[canActivateProtectedRoutes]},
   {path:"shop", component:RoutePlaceholderComponent, canActivate:[canActivateProtectedRoutes]},

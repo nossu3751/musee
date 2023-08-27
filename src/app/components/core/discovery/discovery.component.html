@@ -1,20 +1,7 @@
-<div class="discovery-container" *ngIf="ready">
-    <ng-container *ngFor="let aw of artworks; let i=index">
-        <div class="aw-container">
-            <!-- <div class="aw-author-area">
-                <span style="margin-right: 0.3em;">By.</span>
-                <span style="margin-right: 0.3em;">{{aw.user.first_name}}</span>
-                <span style="margin-right: 0.3em;">{{aw.user.last_name}}</span>
-            </div> -->
-            <div class="aw-img-area">
-                <img class="aw-img" [src]="aw.img_link"/>
-            </div>
-            <div class="aw-info-area">
-                <div class="aw-title"> <span>{{aw.name}} </span> -
-                    <span style="margin-right: 0.3em;">{{aw.user.first_name}}</span>
-                    <span style="margin-right: 0.3em;">{{aw.user.last_name}}</span> 
-                </div>
-            </div>
-        </div>
-    </ng-container>
+<div class="discovery-container" *ngIf="loadedImageCount === artworks.length">
+    <div class="aw-list">
+        <ng-container *ngFor="let aw of artworks; let i=index">
+            <app-img-box [img]="aw.img" (click)="goToArtwork(aw.id)"></app-img-box>
+        </ng-container>
+    </div>
 </div>

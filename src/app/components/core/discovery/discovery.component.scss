@@ -7,6 +7,17 @@
     margin: 0 auto 0 auto;
 }
 
+ngx-masonry {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
 .aw-container {
     width: 100%;
     display: flex;
@@ -21,6 +32,11 @@
     
 }
 
+.aw-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* Spacing between images */
+}
 
 
 

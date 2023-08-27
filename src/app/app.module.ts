@@ -21,6 +21,11 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { FormsModule } from '@angular/forms';
 import { UserComponent } from './components/core/user/user.component';
 import { ModalComponent } from './components/shared/modal/modal.component';
+import { ImgBoxComponent } from './components/shared/img-box/img-box.component';
+import { NgxMasonryModule } from 'ngx-masonry';
+import { SvgComponent } from './components/shared/svg/svg.component';
+import { ArtworkComponent } from './components/core/artwork/artwork.component';
+import { PaddedContainerComponent } from './components/shared/padded-container/padded-container.component';
 
 
 @NgModule({
@@ -36,7 +41,11 @@ import { ModalComponent } from './components/shared/modal/modal.component';
     DiscoveryComponent,
     LoginComponent,
     UserComponent,
-    ModalComponent
+    ModalComponent,
+    ImgBoxComponent,
+    SvgComponent,
+    ArtworkComponent,
+    PaddedContainerComponent
   ],
   imports: [
     BrowserModule,
@@ -52,7 +61,8 @@ import { ModalComponent } from './components/shared/modal/modal.component';
     HammerModule,
     HttpClientModule,
     MatSnackBarModule,
-    FormsModule
+    FormsModule,
+    NgxMasonryModule
   ],
   providers: [
     {

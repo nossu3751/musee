@@ -38,14 +38,18 @@ export class RateArtComponent implements OnInit{
 
   ){}
   ngOnInit(): void {
-    this.artworkService.getRandomArtworks(1,5).subscribe({
-      "next":(data)=>{
-        this.items = data;
-        this.currentItem = this.items.shift();
-        this.loadImage(this.currentItem.img_link);
-        this.isVisible = true;
-      }
-    })
+    const uid = this.authService.loggedInUser
+    if(uid){
+      this.artworkService.getRandomArtworks(uid,5).subscribe({
+        "next":(data)=>{
+          console.log(data)
+          this.items = data;
+          this.currentItem = this.items.shift();
+          this.loadImage(this.currentItem.img_link);
+          this.isVisible = true;
+        }
+      })
+    }
   }
 
   loadImage(imgLink:string) {
