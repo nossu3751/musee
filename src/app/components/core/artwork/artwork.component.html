@@ -2,8 +2,15 @@
     <img [src]="artwork.img_link">
     <div>
         <p>{{artwork.name}}</p>
+        <div>
+            <p>Size: {{artwork.awSize_width}}x{{artwork.awSize_height}}</p>
+        </div>
+    </div>
+    <div class="conatiner" style="display:flex; justify-content: space-between;">
+        <p>@{{email_name}}</p>
+        <mat-icon>star_border</mat-icon>
     </div>
     <div>
-        {{email_name}}
+        {{artwork.description}}
     </div>
 </div>
