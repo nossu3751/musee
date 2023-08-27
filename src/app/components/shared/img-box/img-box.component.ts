@@ -8,7 +8,8 @@ import { Component, Input, OnInit } from '@angular/core';
 export class ImgBoxComponent implements OnInit{
   @Input() width = "100%";
   @Input() height = "auto";
-  @Input() img!:HTMLImageElement;
+  @Input() img!: HTMLImageElement;
+  // @Input() img_name!: string;
 
   orientation = "horizontal"
 

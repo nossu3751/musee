@@ -1,7 +1,19 @@
 <div class="discovery-container" *ngIf="artworks && loadedImageCount === artworks.length">
+    <h1>Discovery</h1>
     <div class="aw-list">
         <ng-container *ngFor="let aw of artworks; let i=index">
             <app-img-box [img]="aw.img" (click)="goToArtwork(aw.id)"></app-img-box>
+            <div class="conatiner" style="justify-content: space-between;">
+                <h2>
+                    {{aw.name}}
+                </h2>
+                <p>
+                    Size:{{aw.awSize_width}}x{{aw.awSize_height}}
+                </p>
+                <p>
+                    @{{aw.email_name}}
+                </p>
+            </div>
         </ng-container>
     </div>
 </div>
