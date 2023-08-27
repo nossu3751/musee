@@ -38,7 +38,6 @@ export class BottomNavComponent {
     )
   }
   navItems = [
-    // {icon:"emoji_events", url:"/competition"},
     {icon:"discovery", url:"/discovery"},
     {icon:"competition", url:"/competition"},
     {icon:"key", url:"/rate"},

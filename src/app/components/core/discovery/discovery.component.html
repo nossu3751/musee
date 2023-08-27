@@ -1,4 +1,4 @@
-<div class="discovery-container" *ngIf="loadedImageCount === artworks.length">
+<div class="discovery-container" *ngIf="artworks && loadedImageCount === artworks.length">
     <div class="aw-list">
         <ng-container *ngFor="let aw of artworks; let i=index">
             <app-img-box [img]="aw.img" (click)="goToArtwork(aw.id)"></app-img-box>

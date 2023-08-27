@@ -26,6 +26,7 @@ import { NgxMasonryModule } from 'ngx-masonry';
 import { SvgComponent } from './components/shared/svg/svg.component';
 import { ArtworkComponent } from './components/core/artwork/artwork.component';
 import { PaddedContainerComponent } from './components/shared/padded-container/padded-container.component';
+import { TopNavComponent } from './components/shared/top-nav/top-nav.component';
 
 
 @NgModule({
@@ -45,7 +46,8 @@ import { PaddedContainerComponent } from './components/shared/padded-container/p
     ImgBoxComponent,
     SvgComponent,
     ArtworkComponent,
-    PaddedContainerComponent
+    PaddedContainerComponent,
+    TopNavComponent
   ],
   imports: [
     BrowserModule,

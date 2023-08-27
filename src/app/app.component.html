@@ -1,6 +1,7 @@
 
 <app-modal></app-modal>
 <app-loading-screen *ngIf="loadingService.pageLoading | async"></app-loading-screen>
+<app-top-nav></app-top-nav>
 <router-outlet>
   <app-loading-screen *ngIf="loadingService.dataLoading | async"></app-loading-screen>
 </router-outlet>
