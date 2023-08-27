@@ -28,6 +28,7 @@ import { ArtworkComponent } from './components/core/artwork/artwork.component';
 import { PaddedContainerComponent } from './components/shared/padded-container/padded-container.component';
 import { TopNavComponent } from './components/shared/top-nav/top-nav.component';
 import { KeysComponent } from './components/core/keys/keys.component';
+import { ToVerificationComponent } from './components/alerts/to-verification/to-verification.component';
 
 
 @NgModule({
@@ -49,7 +50,8 @@ import { KeysComponent } from './components/core/keys/keys.component';
     ArtworkComponent,
     PaddedContainerComponent,
     TopNavComponent,
-    KeysComponent
+    KeysComponent,
+    ToVerificationComponent
   ],
   imports: [
     BrowserModule,

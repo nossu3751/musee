@@ -25,6 +25,7 @@ const routes: Routes = [
   {path:"shop", component:RoutePlaceholderComponent, canActivate:[canActivateProtectedRoutes]},
   {path:"favorite", component:RoutePlaceholderComponent, canActivate:[canActivateProtectedRoutes]},
   { path: "keys", component: KeysComponent , canActivate:[canActivateProtectedRoutes]},
+  { path: "verification", component: RateArtComponent, canActivate:[canActivateProtectedRoutes]},
   { path: "worthPrice", component: WorthPriceChartComponent, canActivate:[canActivateProtectedRoutes]},
   { path: '**', redirectTo: '/' }
 ];

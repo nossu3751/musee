@@ -18,7 +18,7 @@ export class DiscoveryComponent implements OnInit{
     private artworkService:ArtworkService,
     private loadingService:LoadingService,
     private modalService: ModalService,
-    private router:Router
+    private router:Router,
   ){}
 
   goToArtwork(id:number): void{

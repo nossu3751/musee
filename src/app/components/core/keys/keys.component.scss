@@ -1,3 +1,7 @@
+:host {
+    overflow: hidden;
+}
+
 .background {
     width: 100%;
     height: 100%;
@@ -5,6 +9,7 @@
     background-image: url('/assets/backgrounds/key-background.png');
     background-size: cover;
     z-index: -1000;
+   
 }
 
 .container {
@@ -93,7 +98,7 @@ h1 {
     margin: 0 auto 0 auto;
     justify-content: center;
     align-items: center;
-    box-shadow: 0px 0px 30px rgba(0,0,0,0.2);
+    // box-shadow: 0px 0px 30px rgba(0,0,0,0.2);
     // white-space: pre-wrap;
     // word-wrap: break-word;
     // width: 100%;
@@ -102,17 +107,20 @@ h1 {
 .key-image-title {
     margin-bottom: 20px;
     font-size: 25px;
-    width: 100%;
+    width: 260px;
     color: white;
     // box-shadow: 0px 0px 30px rgba(0,0,0,0.2);
-    white-space: pre-wrap;
-    word-wrap: break-word;
+    
+    white-space: normal;
+    word-wrap: break-all;
     display: flex;
-    width: 100%;
+    // width: 100%;
+    font-family: "Made Tommy";
+    text-shadow: 2px 1px 5px rgba(0,0,0,0.8);
+    
 }
 
 .key-image-button {
-    
     width: 260px;
     height: var(--nav-height);
     border-radius: 10px;
@@ -120,12 +128,32 @@ h1 {
     border: none;
     outline: none;
     // box-shadow: none;
+    background-color: rgba(255, 255, 255, 1);;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 18px;
     box-shadow: 0px 0px 30px rgba(0,0,0,0.2);
+    font-family: "Made Tommy";
+}
 
+.key-image-button.verify{
+    
+    background-color: var(--primary-color);
+    color: white;
+
+
+    box-shadow: none;
+    margin: 2em 0 1em 0;
+
+}
+
+.key-image-button.purchase{
+    
+
+
+    box-shadow: none;
+    border: 1px solid black;
 
 
 }
@@ -147,13 +175,67 @@ h1 {
 .alert-area {
     width: 100%;
     height: var(--html-height);
-    background-color: white;
+    
     border-radius: 30px;
-    position: absolute;
-    top: 85%;
+    position: fixed;
+    // top: calc(var(--html-height) - (env(safe-area-inset-bottom) * 2 - 100px));
+    bottom: calc(0 + (var(--nav-height) * 2 + env(safe-area-inset-bottom)));
+  
+    // top: var(--html-height) - 450px;
+    overflow: hidden;
+    z-index: 1000;
+
 }
 
+.alert-area.clicked {
+    top: calc(100px + (var(--nav-height) * 2 + env(safe-area-inset-bottom)));
+}
 
+.alert {
+    width: var(--html-width);
+    height: var(--html-height);
+    background-color: white;
+    position: absolute;
+    top: 50px;
+    // padding-top: 70px;
+    padding: 70px 0 0 0;
+    p {
+        word-break: break-word;
+        white-space: normal;
+        padding: 0 1em 0 1em;
+    }
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    // div {
+    //     inline-size: 100%;
+    //     // word-wrap:break-word;
+    //     width: 100%;
+    // }
+
+
+}
+
+.alert-toggle {
+    height: 100px;
+    width: 100px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    right: calc(50% - 50px);
+    top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+mat-icon.key-icon{
+    stroke: black;
+    width: 40px;
+    height: 40px;
+    font-size: 30px;
+}
 // .key-image-area {
 //     height: 500px;
 //     width: 100%;

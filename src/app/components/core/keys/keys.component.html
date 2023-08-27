@@ -34,11 +34,19 @@
         </div>
     </ng-container>
 </div>
-<div class="alert-area">
+<div class="alert-area" (click)="onKeyClicked()" [ngClass]="isKeyClicked?'clicked':''">
     <div class="alert-toggle">
-
+        <mat-icon svgIcon="key" class="key-icon"></mat-icon>
     </div>
     <div class="alert">
+        <!-- <div class="word">The "currency" that is being used in Musee, where artists can upload art with key, and users can vote in Musee competition and join the bidding process to purchase artworks</div> -->
         
+        
+        <div class="description">
+            <p>The "currency" that is being used in Musee, where artists can upload art with key, and users can vote in Musee competition and join the bidding process to purchase artworks</p>
+            <p>Collect more keys by joining our verification process!</p>
+        </div>
+        <button class="key-image-button verify" (click)="openModal()">Verify Artworks</button>
+        <button class="key-image-button purchase">Purchase more Keys</button>
     </div>
 </div>
