@@ -22,7 +22,7 @@ import { FormsModule } from '@angular/forms';
 import { UserComponent } from './components/core/user/user.component';
 import { ModalComponent } from './components/shared/modal/modal.component';
 import { ImgBoxComponent } from './components/shared/img-box/img-box.component';
-import { NgxMasonryModule } from 'ngx-masonry';
+// import { NgxMasonryModule } from 'ngx-masonry';
 import { SvgComponent } from './components/shared/svg/svg.component';
 import { ArtworkComponent } from './components/core/artwork/artwork.component';
 import { PaddedContainerComponent } from './components/shared/padded-container/padded-container.component';
@@ -62,7 +62,7 @@ import { PaddedContainerComponent } from './components/shared/padded-container/p
     HttpClientModule,
     MatSnackBarModule,
     FormsModule,
-    NgxMasonryModule
+    // NgxMasonryModule
   ],
   providers: [
     {
