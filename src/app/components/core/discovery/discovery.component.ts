@@ -13,7 +13,7 @@ import { Router } from '@angular/router';
 export class DiscoveryComponent implements OnInit{
   ready:boolean = false;
   loadedImageCount = 0;
-  artworks:any = null;
+  artworks: any = null;
   constructor(
     private artworkService:ArtworkService,
     private loadingService:LoadingService,
@@ -38,9 +38,12 @@ export class DiscoveryComponent implements OnInit{
           for(let aw of this.artworks){
             let img = new Image()
             img.src = aw.img_link
+            let email_name = aw.user.email.split("@")[0]
+            aw.email_name = email_name
             img.onload = ()=>{
               this.loadedImageCount += 1;
               aw.img = img
+              
             }
           }
           this.ready = true;

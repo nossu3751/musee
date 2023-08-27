@@ -21,6 +21,7 @@
     position:fixed;
     // padding-top:env(safe-area-inset-bottom);
     top: 0;
+    backdrop-filter:blur(10px);
 }
 
 .left {
