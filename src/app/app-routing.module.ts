@@ -10,6 +10,7 @@ import { LoginComponent } from './components/core/login/login.component';
 import { UserComponent } from './components/core/user/user.component';
 import { canActivateProtectedRoutes } from './services/auth/authenticate.service';
 import { ArtworkComponent } from './components/core/artwork/artwork.component';
+import { KeysComponent } from './components/core/keys/keys.component';
 
 const routes: Routes = [
   {path:"", redirectTo: 'discovery', pathMatch: 'full' },
@@ -23,7 +24,7 @@ const routes: Routes = [
   {path:"competition", component:RoutePlaceholderComponent, canActivate:[canActivateProtectedRoutes]},
   {path:"shop", component:RoutePlaceholderComponent, canActivate:[canActivateProtectedRoutes]},
   {path:"favorite", component:RoutePlaceholderComponent, canActivate:[canActivateProtectedRoutes]},
-  { path: "rate", component: RateArtComponent , canActivate:[canActivateProtectedRoutes]},
+  { path: "keys", component: KeysComponent , canActivate:[canActivateProtectedRoutes]},
   { path: "worthPrice", component: WorthPriceChartComponent, canActivate:[canActivateProtectedRoutes]},
   { path: '**', redirectTo: '/' }
 ];

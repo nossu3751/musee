@@ -1,0 +1,44 @@
+<div class="background"></div>
+<div class="container" *ngIf="myInfo">
+    <div class="header">
+        <div class="title">
+            <h1>Key</h1>
+        </div>
+        <div class="keys">
+            <div class="count">
+                <h1>
+                    {{myInfo.tokens}}
+                </h1>
+            </div>
+            <div class="label">
+                Remaining
+            </div>
+        </div>
+    </div>
+    <div class="key-description">
+        Enter open bids with your keys
+    </div>
+</div>
+<div class="key-images-container" *ngIf="artworks && loadedImageCount === artworks.length">
+    <ng-container *ngFor="let aw of artworks; let i = index">
+        <div class="key-image-wrapper">
+            <!-- <app-img-box [img]="aw.img"></app-img-box> -->
+            <img class="key-image" [src]="aw.img.src">
+            <div class="key-image-bottom">
+                <div class="key-image-title">
+                    {{aw.name}}
+                </div>
+                <button class="key-image-button">Enter Bid</button>
+            </div>
+            
+        </div>
+    </ng-container>
+</div>
+<div class="alert-area">
+    <div class="alert-toggle">
+
+    </div>
+    <div class="alert">
+        
+    </div>
+</div>

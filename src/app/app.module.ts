@@ -27,6 +27,7 @@ import { SvgComponent } from './components/shared/svg/svg.component';
 import { ArtworkComponent } from './components/core/artwork/artwork.component';
 import { PaddedContainerComponent } from './components/shared/padded-container/padded-container.component';
 import { TopNavComponent } from './components/shared/top-nav/top-nav.component';
+import { KeysComponent } from './components/core/keys/keys.component';
 
 
 @NgModule({
@@ -47,7 +48,8 @@ import { TopNavComponent } from './components/shared/top-nav/top-nav.component';
     SvgComponent,
     ArtworkComponent,
     PaddedContainerComponent,
-    TopNavComponent
+    TopNavComponent,
+    KeysComponent
   ],
   imports: [
     BrowserModule,

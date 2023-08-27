@@ -1,0 +1,50 @@
+import { Component, OnInit } from '@angular/core';
+import { AuthenticateService } from 'src/app/services/auth/authenticate.service';
+import { ArtworkService } from 'src/app/services/data/artwork.service';
+import { UserService } from 'src/app/services/data/user.service';
+
+@Component({
+  selector: 'app-keys',
+  templateUrl: './keys.component.html',
+  styleUrls: ['./keys.component.scss']
+})
+export class KeysComponent implements OnInit{
+  myInfo:any = null;
+  artworks:any = null;
+  loadedImageCount:number = 0;
+  constructor(
+    private authService:AuthenticateService,
+    private userService:UserService,
+    private artworkService:ArtworkService
+  ){
+
+  }
+  ngOnInit(): void {
+    const user = this.authService.loggedInUser
+    if (user) {
+      this.userService.getUser(user).subscribe({
+        "next":(data)=>{
+          this.myInfo = data;
+          console.log(this.myInfo.tokens)
+        }
+      })
+      this.artworkService.getArtworks().subscribe({
+        "next":(data)=>{
+          this.artworks = data
+          this.artworks = this.artworks.filter((aw:any)=>{
+            return aw.verified === true;
+          })
+          for(let aw of this.artworks){
+            let img = new Image()
+            img.src = aw.img_link
+            img.onload = ()=>{
+              this.loadedImageCount += 1;
+              aw.img = img
+            }
+          }
+        }
+      })
+    }
+    
+  }
+}

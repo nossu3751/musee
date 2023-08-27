@@ -40,7 +40,7 @@ export class BottomNavComponent {
   navItems = [
     {icon:"discovery", url:"/discovery"},
     {icon:"competition", url:"/competition"},
-    {icon:"key", url:"/rate"},
+    {icon:"key", url:"/keys"},
     {icon:"profile", url:"/user"},
   ]
 }
