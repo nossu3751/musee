@@ -13,14 +13,16 @@
 }
 
 .img-box {
-    flex: 0 0 33.3333%;
+
     height: 150px;
+    width: 100%;
     object-fit: contain;
     display: flex;
     position: relative;
     justify-content: center;
     align-items: center;
     margin: 0.5em 0 0.5em 0;
+    // flex-direction: column;
     img {
         position: absolute;
         max-width: 100%;
@@ -29,6 +31,15 @@
     .message {
         position: absolute;
     }
+    
+}
+
+
+.item {
+    display: flex;
+    flex: 0 0 33.33333%;
+    flex-direction: column;
+
 }
 
 .logout {
@@ -49,4 +60,11 @@
     border: none;
 }
 
+.container {
+    display: flexbox;
+}
 
+.row {
+    display: flex;
+    justify-content: space-between;
+}

@@ -1,17 +1,41 @@
 <div class="user-container">
-    <div *ngIf="myInfo">
-        {{myInfo.first_name}} {{myInfo.last_name}}
+    
+    <div class="container">
+        <div class="row">
+            <h1>Profile</h1>
+            <button>
+                <mat-icon>settings</mat-icon>
+            </button>
+        </div>
+    </div>
+
+    
+    <div *ngIf="myInfo" class="container">
+        <div class="row">
+            <p>{{myInfo.first_name}} {{myInfo.last_name}}</p>
+            <p>{{myInfo.tokens}} Keys</p>
+        </div>
     </div>
     <div *ngIf="myArtworks && (loadedImagesCount | async) === myArtworks.length" class="img-box-container">
         <ng-container *ngFor="let aw of myArtworks; let i = index">
-            <div class="img-box">
-                <img [src]="aw.img_link" [ngStyle]="{
-                    opacity: aw.verified ? '1':'0.2'
-                }" class="img">
-                <div class="message" *ngIf="!aw.verified">
-                    pending
+            <div class="item">
+                <div class="img-box">
+                    <img [src]="aw.img_link" [ngStyle]="{
+                        opacity: aw.verified ? '1':'0.2'
+                    }" class="img">
+                    <div class="message" *ngIf="!aw.verified">
+                        pending
+                    </div>
+                    
+                </div>
+                <div>
+                    {{aw.name}}
                 </div>
             </div>
+                
+    
+            
+           
         </ng-container>
     </div>
     <button class="logout" (click)="authService.logout()">
