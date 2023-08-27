@@ -20,4 +20,8 @@ export class ArtworkService {
   getUserArtworks(uid:number):Observable<any> {
     return this.http.get(`http://localhost:5000/api/demo/artworks/?uid=${uid}`)
   }
+
+  getArtworkDetails(awid: number): Observable<any>{
+    return this.http.get(`http://localhost:5000/api/demo/artwork_details/?awid=${awid}`)
+  }
 }
